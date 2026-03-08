@@ -11,3 +11,4 @@
 Failed to set Next.js data cache for https://api.weather.gov/alerts/active, items over 2MB can not be cached (2806811 bytes)
 Failed to set Next.js data cache for https://api.weather.gov/alerts/active, items over 2MB can not be cached (2811134 bytes)
 Failed to set Next.js data cache for https://api.weather.gov/alerts/active, items over 2MB can not be cached (2814771 bytes)
+^C^C
