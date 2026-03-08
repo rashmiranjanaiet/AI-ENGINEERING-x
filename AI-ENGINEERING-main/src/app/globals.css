@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+:root {
+  --background: #eef3f7;
+  --foreground: #102030;
+  --panel: rgba(255, 255, 255, 0.78);
+  --panel-border: rgba(16, 32, 48, 0.08);
+  --accent: #d56a42;
+  --navy: #163753;
+  --teal: #2f7e88;
+  --shadow: 0 24px 80px rgba(15, 34, 56, 0.14);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-space-grotesk);
+  --font-mono: var(--font-plex-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  position: relative;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-space-grotesk), sans-serif;
+  background-image:
+    radial-gradient(circle at top left, rgba(213, 106, 66, 0.18), transparent 28%),
+    radial-gradient(circle at top right, rgba(47, 126, 136, 0.22), transparent 32%),
+    linear-gradient(165deg, #f6f1e8 0%, #dce8f2 46%, #f4f6fb 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(22, 55, 83, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(22, 55, 83, 0.035) 1px, transparent 1px);
+  background-size: 36px 36px;
+  opacity: 0.45;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(213, 106, 66, 0.22);
+  color: var(--foreground);
+}
+
+.panel-glow {
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow);
+}
+
+.status-dot {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  border-radius: 999px;
+  background: #2aa879;
+  box-shadow: 0 0 0 7px rgba(42, 168, 121, 0.14);
+}
+
+.map-fade {
+  background:
+    linear-gradient(180deg, rgba(238, 243, 247, 0.32) 0%, rgba(238, 243, 247, 0) 24%),
+    linear-gradient(0deg, rgba(238, 243, 247, 0.22) 0%, rgba(238, 243, 247, 0) 22%);
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  background: #d9e7f2;
+  font-family: var(--font-space-grotesk), sans-serif;
+}
+
+.leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.74) !important;
+  backdrop-filter: blur(14px);
+}
+
+.leaflet-tooltip.flight-tooltip {
+  border: 0;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--foreground);
+  box-shadow: 0 18px 36px rgba(15, 34, 56, 0.16);
+  padding: 10px 12px;
+}
+
+.flight-marker-shell {
+  background: transparent;
+  border: 0;
+}
+
+.plane-marker {
+  display: flex;
+  height: 34px;
+  width: 34px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(22, 55, 83, 0.14);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(222, 233, 244, 0.88));
+  box-shadow: 0 10px 24px rgba(15, 34, 56, 0.18);
+  transform-origin: center;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.plane-marker.is-active {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(180deg, #173c59, #0d2435);
+  box-shadow: 0 18px 38px rgba(15, 34, 56, 0.28);
+}
+
+.plane-marker svg {
+  display: block;
+  height: 20px;
+  width: 20px;
+  fill: var(--navy);
+}
+
+.plane-marker.is-active svg {
+  fill: #fff;
+}
+
+.flight-scroll::-webkit-scrollbar {
+  width: 9px;
+}
+
+.flight-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.flight-scroll::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(22, 55, 83, 0.16);
+}
