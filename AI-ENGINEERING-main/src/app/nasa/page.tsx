@@ -325,6 +325,13 @@ export default async function NasaPage() {
                 Flight radar
               </Link>
 
+              <Link
+                href="/world-monitor"
+                className="rounded-[22px] border border-slate-300 bg-white px-5 py-3 text-center text-sm font-semibold text-slate-900 transition hover:border-slate-500"
+              >
+                World monitor
+              </Link>
+
               <form action={logout}>
                 <button
                   type="submit"

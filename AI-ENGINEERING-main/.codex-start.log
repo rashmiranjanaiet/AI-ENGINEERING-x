@@ -7,4 +7,7 @@
 - Network:       http://127.0.0.1:3000
 
 ✓ Starting...
-✓ Ready in 751ms
+✓ Ready in 975ms
+Failed to set Next.js data cache for https://api.weather.gov/alerts/active, items over 2MB can not be cached (2806811 bytes)
+Failed to set Next.js data cache for https://api.weather.gov/alerts/active, items over 2MB can not be cached (2811134 bytes)
+Failed to set Next.js data cache for https://api.weather.gov/alerts/active, items over 2MB can not be cached (2814771 bytes)
